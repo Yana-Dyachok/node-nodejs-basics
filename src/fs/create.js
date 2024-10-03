@@ -9,10 +9,8 @@ const path = resolve(dirName, 'files', 'fresh.txt');
 const create = async () => {
   try {
     await writeFile(path, 'I am fresh and young', { flag: 'wx' });
-  } catch (err) {
-    if (err.code === 'EEXIST') {
-      throw new Error('FS operation failed');
-    } else throw err;
+  } catch {
+    throw new Error('FS operation failed');
   }
 };
 
