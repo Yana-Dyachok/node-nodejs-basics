@@ -21,9 +21,9 @@ const copy = async () => {
             if (targetStats.isDirectory()) {
                 throw new Error(errorMessage);
             }
-        } catch (err) {
-            if (err.code !== 'ENOENT') {
-                throw err;
+        } catch (error) {
+            if (error.code !== 'ENOENT') {
+                throw error;
             }
         }
 
