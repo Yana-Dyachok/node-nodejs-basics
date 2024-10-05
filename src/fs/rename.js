@@ -1,6 +1,6 @@
-import { promises as fs } from 'fs';
-import { dirname, resolve } from 'path';
-import { fileURLToPath } from 'url';
+import { promises as fs } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const fileName = fileURLToPath(import.meta.url);
 const dirName = dirname(fileName);
