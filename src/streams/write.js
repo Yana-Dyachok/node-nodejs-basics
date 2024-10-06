@@ -23,11 +23,10 @@ const write = async () => {
         });
 
         process.on('SIGINT', () => {
-            output.end();
             process.exit();
         });
-    } catch (error) {
-        console.error('Error writing:', error);
+    } catch {
+        throw new Error('Error writing');
     }
 };
 
