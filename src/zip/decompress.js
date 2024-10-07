@@ -4,10 +4,10 @@ import { createReadStream, createWriteStream } from 'node:fs';
 import { pipeline } from 'node:stream/promises';
 import { createGunzip } from 'node:zlib';
 
-const fileName = fileURLToPath(import.meta.url);
-const dirName = dirname(fileName);
-const filePath = resolve(dirName, 'files', 'fileToCompress.txt');
-const archivePath = resolve(dirName, 'files', 'archive.gz');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const filePath = resolve(__dirname, 'files', 'fileToCompress.txt');
+const archivePath = resolve(__dirname, 'files', 'archive.gz');
 
 const decompress = async () => {
     try {

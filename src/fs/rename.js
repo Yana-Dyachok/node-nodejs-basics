@@ -2,10 +2,10 @@ import { promises as fs } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const fileName = fileURLToPath(import.meta.url);
-const dirName = dirname(fileName);
-const wrongPath = resolve(dirName, 'files', 'wrongFilename.txt');
-const renamePath = resolve(dirName, 'files', 'properFilename.md');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const wrongPath = resolve(__dirname, 'files', 'wrongFilename.txt');
+const renamePath = resolve(__dirname, 'files', 'properFilename.md');
 const errorMessage = 'FS operation failed';
 
 const isExists = async (path) => {

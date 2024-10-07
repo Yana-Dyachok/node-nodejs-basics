@@ -3,9 +3,9 @@ import { createHash } from 'node:crypto';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const fileName = fileURLToPath(import.meta.url);
-const dirName = dirname(fileName);
-const path = resolve(dirName, 'files', 'fileToCalculateHashFor.txt');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const path = resolve(__dirname, 'files', 'fileToCalculateHashFor.txt');
 
 const calculateHash = async () => {
     const hash = createHash('sha256');

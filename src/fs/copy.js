@@ -2,12 +2,12 @@ import { copyFile, readdir, stat, mkdir } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const fileName = fileURLToPath(import.meta.url);
-const dirName = dirname(fileName);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const copy = async () => {
-    const sourceDir = resolve(dirName, 'files');
-    const targetDir = resolve(dirName, 'files_copy');
+    const sourceDir = resolve(__dirname, 'files');
+    const targetDir = resolve(__dirname, 'files_copy');
     const errorMessage = 'FS operation failed';
 
     try {

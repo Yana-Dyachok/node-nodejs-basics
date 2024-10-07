@@ -2,9 +2,9 @@ import { createReadStream } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const fileName = fileURLToPath(import.meta.url);
-const dirName = dirname(fileName);
-const path = resolve(dirName, 'files', 'fileToRead.txt');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const path = resolve(__dirname, 'files', 'fileToRead.txt');
 
 const read = async () => {
     try {

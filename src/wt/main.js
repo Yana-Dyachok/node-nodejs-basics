@@ -4,9 +4,9 @@ import { cpus } from 'node:os';
 import { Worker } from 'node:worker_threads';
 
 const incNumber = 10;
-const fileName = fileURLToPath(import.meta.url);
-const dirName = dirname(fileName);
-const path = resolve(dirName, 'worker.js');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const path = resolve(__dirname, 'worker.js');
 
 const performCalculations = async () => {
     const numberOfCores = cpus().length;
